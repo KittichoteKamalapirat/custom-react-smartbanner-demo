@@ -44,13 +44,6 @@ const Demo = () => {
     closeLabel = "Close",
     ...rest
   } = props;
-  //   const [title, setTitle] = useState<string>("Frontend Masters");
-  //   const [appleDescription, setAppleDescription] = useState<string>(
-  //     "Get on the App Store"
-  //   );
-  //   const [androidDescription, setAndroidDescription] = useState<string>(
-  //     "Get on the Play Store"
-  //   );
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
