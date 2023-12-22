@@ -9,11 +9,11 @@ import {
   isMobile,
 } from "custom-react-smartbanner";
 import "custom-react-smartbanner/dist/custom-react-smartbanner.css";
+import { COOKIE, setCookie } from "../lib/cookie";
 
 const initialState = {
-  title: "Frontend Masters",
-  iconUrl:
-    "https://play-lh.googleusercontent.com/8X11A1RYP--qUN-FA3tuEdNG--8QSptibgY6xWQRUDI2YASyAXe726CaE_jEohFYGno=w240-h480-rw",
+  title: "React Smartbanner",
+  iconUrl: "https://picsum.photos/200",
 
   appleDescription: "Get on the App Store",
   androidDescription: "Get on the Play Store",
@@ -30,6 +30,8 @@ const CHANGE_PLATFORM_LABEL =
 const Demo = () => {
   const [props, setProps] = useState<SmartbannerProps>(initialState);
 
+  const [isOpen, setIsOpen] = useState(true);
+
   const {
     iconUrl,
     title,
@@ -41,20 +43,30 @@ const Demo = () => {
 
     appleUrl,
     androidUrl,
-    closeLabel = "Close",
+
     ...rest
   } = props;
+
+  const handleClose = () => {
+    setCookie(COOKIE.HideSmartBanner, "true", {
+      sameSite: "strict",
+      maxAge: 60 * 60 * 24 * 7, // 1 week
+    });
+
+    setIsOpen(false);
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* left */}
       <div>
         <Smartbanner
+          isOpen={isOpen}
           title={title}
           appleDescription={appleDescription}
           androidDescription={androidDescription}
           buttonLabel={buttonLabel}
-          closeLabel={closeLabel}
+          onClose={handleClose}
           appleUrl={appleUrl}
           androidUrl={androidUrl}
           iconUrl={iconUrl}
