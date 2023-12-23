@@ -896,10 +896,10 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.3.tgz#d80ff294d114fb0e6ac500fbf85b60137d7eff81"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
 
-custom-react-smartbanner@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/custom-react-smartbanner/-/custom-react-smartbanner-0.0.13.tgz#5ab1632d846913d9434874cb5d38238a8bb8ca63"
-  integrity sha512-KvaDD8qlwycNzCIknNtnsQZoqdv0s5A+86uFhLDKzgSSDH2ZKcLR/Cd1gZs/jHJimPLSybYre5Uo1YXF/CkiAA==
+custom-react-smartbanner@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/custom-react-smartbanner/-/custom-react-smartbanner-0.0.14.tgz#9cac49787718b74a07404cdeede02954cf98962f"
+  integrity sha512-0xbdO2jc9nAeDx3ScdYHM0/jkmiZkKUBXHxglRrcGdpWtsDi6cekrKiGLj2Bq3x4KZuQ3OJNGlXG+eev0gsh3w==
   dependencies:
     react "^18.2.0"
     react-dom "^18.2.0"

@@ -9,9 +9,9 @@ import {
   isMobile,
 } from "custom-react-smartbanner";
 import "custom-react-smartbanner/dist/custom-react-smartbanner.css";
-import { COOKIE, setCookie } from "../lib/cookie";
 
 const initialState = {
+  isOpen: true,
   title: "Frontend Masters",
   iconUrl:
     "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/6f/52/a1/6f52a147-e8ea-e784-f299-92302bbd1976/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.webp",
@@ -49,14 +49,7 @@ const Demo = () => {
     ...rest
   } = props;
 
-  const handleClose = () => {
-    setCookie(COOKIE.HideSmartBanner, "true", {
-      sameSite: "strict",
-      maxAge: 60 * 60 * 24 * 7, // 1 week
-    });
-
-    setIsOpen(false);
-  };
+  const handleClose = () => setIsOpen(false);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -65,20 +58,13 @@ const Demo = () => {
         <Smartbanner
           isOpen={isOpen}
           title={title}
+          iconUrl={iconUrl}
           appleDescription={appleDescription}
           androidDescription={androidDescription}
           buttonLabel={buttonLabel}
           onClose={handleClose}
           appleUrl={appleUrl}
           androidUrl={androidUrl}
-          iconUrl={iconUrl}
-          displayOnApple={displayOnApple}
-          displayOnAndroid={displayOnAndroid}
-          displayOnDesktop={rest.displayOnDesktop}
-          desktopDescription={
-            rest.displayOnDesktop ? rest.desktopDescription : ""
-          }
-          desktopUrl={rest.displayOnDesktop ? rest.desktopUrl : ""}
         />
         <div className="mt-4">
           <h2 className="font-semibold text-center">
