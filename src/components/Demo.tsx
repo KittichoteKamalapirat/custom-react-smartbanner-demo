@@ -12,8 +12,10 @@ import "custom-react-smartbanner/dist/custom-react-smartbanner.css";
 import { COOKIE, setCookie } from "../lib/cookie";
 
 const initialState = {
-  title: "React Smartbanner",
-  iconUrl: "https://picsum.photos/200",
+  title: "Frontend Masters",
+  iconUrl:
+    "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/6f/52/a1/6f52a147-e8ea-e784-f299-92302bbd1976/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.webp",
+  // iconUrl: "https://picsum.photos/200",
 
   appleDescription: "Get on the App Store",
   androidDescription: "Get on the Play Store",
