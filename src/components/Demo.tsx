@@ -24,10 +24,14 @@ const initialState = {
     "https://play.google.com/store/apps/details?id=in.mjg.frontendmasters.store&hl=en_GB",
   displayOnAndroid: true,
   displayOnApple: true,
+  displayOnDesktop: true,
+  desktopDescription: "Get on the App Store",
+  desktopUrl: "https://apps.apple.com/us/app/frontend-masters/id1383780486",
 };
 
-const CHANGE_PLATFORM_LABEL =
-  "Change to see banner for this platform via Dev Tools";
+const CHANGE_PLATFORM_LABEL = "Change to this platform via Dev Tools";
+
+const DETECTED_PLATFORM_LABEL = "Detected User Agent";
 
 const Demo = () => {
   const [props, setProps] = useState<SmartbannerProps>(initialState);
@@ -129,7 +133,7 @@ const Demo = () => {
               </label>
               {isIos ? (
                 <span className="text-sm px-2 py-[2px] bg-teal-400 rounded-md text-white">
-                  Matched User Agent
+                  {DETECTED_PLATFORM_LABEL}
                 </span>
               ) : (
                 <p className="text-sm px-2 py-[2px] border-[1px] border-teal-400 rounded-md text-teal-400 bg-white">
@@ -199,7 +203,7 @@ const Demo = () => {
               </label>
               {isAndroid ? (
                 <span className="text-sm px-2 py-[2px] bg-teal-400 rounded-md text-white">
-                  Matched User Agent
+                  {DETECTED_PLATFORM_LABEL}
                 </span>
               ) : (
                 <p className="text-sm px-2 py-[2px] border-[1px] border-teal-400 rounded-md text-teal-400 bg-white">
@@ -248,7 +252,7 @@ const Demo = () => {
               <input
                 type="checkbox"
                 value="true"
-                defaultChecked={false}
+                defaultChecked={true}
                 onChange={() => {
                   (setProps as any)({
                     ...props,
@@ -267,7 +271,7 @@ const Demo = () => {
               </label>
               {!isMobile && (
                 <span className="text-sm px-2 py-[2px] bg-teal-400 rounded-md text-white">
-                  Matched User Agent
+                  {DETECTED_PLATFORM_LABEL}
                 </span>
               )}
             </div>
