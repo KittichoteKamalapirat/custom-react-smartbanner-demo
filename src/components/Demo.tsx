@@ -65,6 +65,13 @@ const Demo = () => {
           onClose={handleClose}
           appleUrl={appleUrl}
           androidUrl={androidUrl}
+          displayOnApple={displayOnApple}
+          displayOnAndroid={displayOnAndroid}
+          displayOnDesktop={rest.displayOnDesktop}
+          desktopDescription={
+            (rest.displayOnDesktop && rest.desktopDescription) || ""
+          }
+          desktopUrl={(rest.displayOnDesktop && rest.desktopUrl) || ""}
         />
         <div className="mt-4">
           <h2 className="font-semibold text-center">
